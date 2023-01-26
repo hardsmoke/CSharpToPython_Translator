@@ -1,6 +1,6 @@
 # Translator From CSharp To Python
 
-# Getting Started
+# Checkout
 [Translator WebSite](https://martynovaa.bsite.net/)
 
 # Состав команды
