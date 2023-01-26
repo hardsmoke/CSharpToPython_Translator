@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "DCqiHX9LoP+AYianXYtn9ZXahVe1yfUU9AptfOrVj2vjxUOZaESWjaHARDTmOjWYtCgQ9lTEhWsYqFIyHI8aZQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hards\\Desktop\\Translator\\Translator\\Translator.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://teamcity.monogame.net/guestAuth/app/nuget/feed/_Root/default/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

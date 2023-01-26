@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "knNwJeq8sSf70h+y/hj8ihqyc5Z2bZZZ3UwnGBOHzk/UQ7TF9jNdIy0Jgoofh2OiIQPyz34/K+lkeKnvr8sqEg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hards\\Desktop\\Translator\\Web\\Web\\Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hards\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://teamcity.monogame.net/guestAuth/app/nuget/feed/_Root/default/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

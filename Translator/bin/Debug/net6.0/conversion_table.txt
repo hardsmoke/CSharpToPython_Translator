@@ -1,0 +1,23 @@
+*if*-*if*
+*else*-*else*
+*true*-*True*
+*false*-*False*
+*return*-*return*
+*while*-*while*
+*for*-*for*
+*foreach*-**
+*do*-**
+
+*int*-**
+*float*-**
+*bool*-**
+*void*-**
+*string*-**
+*char*-**
+
+*//*-*#*
+*{*-**
+*}*-**
+* *-* *
+
+*Console.WriteLine*-*print*
