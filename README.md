@@ -1,7 +1,7 @@
 # Translator From CSharp To Python
 
 # Getting Started
-docker
+[Translator WebSite](https://martynovaa.bsite.net/)
 
 # Состав команды
 * Кирилл Борисенко
