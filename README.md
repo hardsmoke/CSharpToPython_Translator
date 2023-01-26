@@ -11,8 +11,8 @@
 * Б9119-09.03.04прогин(3)
 
 # Modules
-* Lexical Analyzer
-* Syntax Parser
+* Lexical Analyzer (regex)
+* Syntax Parser (top-down)
 * Semantic Analyzer
 * Code Generator
 
