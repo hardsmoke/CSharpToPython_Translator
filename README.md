@@ -3,6 +3,16 @@
 # Getting Started
 docker
 
+# Состав команды
+* Кирилл Борисенко
+* Александр Мартынов
+
+# Modules
+* Lexical Analyzer
+* Syntax Parser
+* Semantic Analyzer
+* Code Generator
+
 # Available constructions
 ## DataTypes `int float bool char string`
 > input
