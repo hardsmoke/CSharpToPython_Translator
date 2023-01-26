@@ -1,5 +1,8 @@
 # Translator From CSharp To Python
 
+# Getting Started
+docker
+
 # Available constructions
 ## DataTypes `int float bool char string`
 > input
