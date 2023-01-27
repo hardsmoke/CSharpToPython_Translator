@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DCqiHX9LoP+AYianXYtn9ZXahVe1yfUU9AptfOrVj2vjxUOZaESWjaHARDTmOjWYtCgQ9lTEhWsYqFIyHI8aZQ==",
+  "dgSpecHash": "RYFRLLucL0HP6peqW1qW+CYBsbjWd1gZxWqrF2GxQqNWHtUAvFcMhiF3tuKHfapK7sk28j+lHPUPYQaINDC82g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hards\\Desktop\\Translator\\Translator\\Translator.csproj",
+  "projectFilePath": "C:\\Users\\hards\\Desktop\\CSharpToPython_Translator-main\\CSharpToPython_Translator-main\\Translator\\Translator.csproj",
   "expectedPackageFiles": [],
   "logs": [
     {

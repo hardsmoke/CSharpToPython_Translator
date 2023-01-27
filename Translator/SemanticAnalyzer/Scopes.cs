@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Translator.SemanticAnalyzer
+﻿namespace Translator.SemanticAnalyzer
 {
     public class Scopes
     {
@@ -21,6 +17,20 @@ namespace Translator.SemanticAnalyzer
         public void Remove(Scope scope)
         {
             _scopes.Remove(scope);
+        }
+
+        public Variable FindLibrary(string identificator)
+        {
+            foreach (var scope in _scopes)
+            {
+                Variable library = scope.FindLibrary(identificator);
+                if (library != null)
+                {
+                    return library;
+                }
+            }
+
+            return null;
         }
 
         public List<Function> FindFunctions(string identificator)

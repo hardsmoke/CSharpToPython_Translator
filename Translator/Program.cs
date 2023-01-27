@@ -28,12 +28,12 @@ namespace Translator
             }
         }
 
-        public static List<Token> GetTokensFromLexer(string input)
+        public static CSharpTokenType[] GetCSharpTokenTypes()
         {
-            CSharpTokenType[] tokenTypes =
+            return new CSharpTokenType[]
             {
                 new CSharpTokenType("SYSTEM_METHOD", "\\b(?:Console\\.WriteLine)\\b"),
-                new CSharpTokenType("KEYWORD", "\\b(?:if|else|true|false|return|while|for|foreach|do)\\b"),
+                new CSharpTokenType("KEYWORD", "\\b(?:if|else|true|false|return|while|for|foreach|do|using)\\b"),
                 new CSharpTokenType("DATATYPE", "\\b(?:int|float|bool|void|string|char)\\b"),
                 new CSharpTokenType("ID", "[A-Za-z][A-Za-z0-9_]*"),
                 new CSharpTokenType("REAL_NUMBER", "[0-9]+\\.[0-9]*"),
@@ -48,8 +48,11 @@ namespace Translator
                 new CSharpTokenType("OPERATION", "[+\\-\\*/.=\\(\\)\\{\\}<>\\!]"),
                 new CSharpTokenType("END_OF_INSTRUCTION", ";"),
             };
+        }
 
-            RegexTokenizer tokenizer = new RegexTokenizer(input, tokenTypes);
+        public static List<Token> GetTokensFromLexer(string input)
+        {
+            RegexTokenizer tokenizer = new RegexTokenizer(input, GetCSharpTokenTypes());
 
             return tokenizer.Tokens;
         }
@@ -125,7 +128,7 @@ namespace Translator
                 "&", "|", ";", "\'", "\"", "_", "#", "@", "$", "^", "~", "№", ".", "<",
                 ":", "?", "bool", "char", "int", "float", "string", "if", "else",
                 "==", "!=", ">=", "<=", "true", "false", "||", "&&", " ", "'", "void",
-                "return", "for", "while", "do",
+                "return", "for", "while", "do", "using",
             };
         }
 
@@ -186,6 +189,7 @@ namespace Translator
                 "E1",
                 "T1",
                 "оператор инкремента",
+                "подключение библиотеки",
             };
         }
 
@@ -193,7 +197,11 @@ namespace Translator
         {
             List<Rule> rulesList = new List<Rule>
             {
+                new Rule("программа", new List<string> { "подключение библиотеки", "блок кода"}),
                 new Rule("программа", new List<string> {"блок кода"}),
+
+                new Rule("подключение библиотеки", new List<string> {"using", "идентификатор", ";"}),
+                new Rule("подключение библиотеки", new List<string> {"using", "идентификатор", ";", "подключение библиотеки"}),
 
                 new Rule("тело", new List<string> {"блок кода"}),
                 new Rule("блок кода", new List<string> {"инструкция", "блок кода"}),
@@ -321,9 +329,9 @@ namespace Translator
 
                 new Rule("возврат значения", new List<string> {"return", "выражение", ";"}),
 
-                new Rule("вызов функции", new List<string> {"идентификатор", "(", ")"}),
                 new Rule("вызов функции", new List<string> {"идентификатор", "(", "параметры вызова функции", ")"}),
                 new Rule("параметры вызова функции", new List<string> {"func param"}),
+                new Rule("параметры вызова функции", new List<string> {}),
                 new Rule("func param", new List<string> {"параметр вызова функции"}),
                 new Rule("func param", new List<string> {"параметр вызова функции", ",", "func param"}),
                 new Rule("параметр вызова функции", new List<string> {"выражение"}),
@@ -595,11 +603,19 @@ namespace Translator
         public static List<Error> GetErrors(string input)
         {
             SyntaxParser.SyntaxParser parser = GetSyntaxParser(input);
+            RegexTokenizer tokenizer = new RegexTokenizer(input, GetCSharpTokenTypes());
 
             List<Error> errors = new List<Error>();
 
-            errors.AddRange(parser.Errors);
-            errors.AddRange(GetSemanticErrors(input));
+            if (tokenizer.Errors.Count > 0)
+            {
+                errors.AddRange(tokenizer.Errors);
+            }
+            else
+            {
+                errors.AddRange(parser.Errors);
+                errors.AddRange(GetSemanticErrors(input));
+            }
 
             return errors;
         }
@@ -622,7 +638,7 @@ namespace Translator
 
         static void Main(string[] args)
         {
-            DebugMode debugMode = DebugMode.RESULT;
+            DebugMode debugMode = DebugMode.DISABLED;
 
             //Input
             string filename = "input.txt";
@@ -633,8 +649,8 @@ namespace Translator
 
             //Syntax
             List<string> syntaxParserInput = GetSyntaxParserData(tokens);
-            Tree syntaxTree = GetSyntaxTree(syntaxParserInput, DebugMode.RESULT);
-            syntaxTree.Print();
+            Tree syntaxTree = GetSyntaxTree(syntaxParserInput, DebugMode.DISABLED);
+            //syntaxTree.Print();
 
 
             switch (debugMode)

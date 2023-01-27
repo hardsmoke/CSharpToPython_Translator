@@ -228,7 +228,12 @@ namespace Translator.SemanticAnalyzer
                     scopes.Last().Add(variable);
                 }
             }
-            else if (node.Parent.Data != "вызов функции" && node.Parent.Data != "объявление функции")
+            else if (node.Parent.Data == "подключение библиотеки")
+            {
+                Variable lib = new Variable(DataType.NONE, node.Children[0].Data);
+                scopes.Last().Add(lib, true);
+            }
+            else if (node.Parent.Data != "вызов функции" && node.Parent.Data != "объявление функции" && node.Parent.Data != "подключение библиотеки")
             {
                 Variable variable = scopes.FindVariable(identificator);
                 if (variable is null)
@@ -317,6 +322,15 @@ namespace Translator.SemanticAnalyzer
             }
             else if (node.Parent.Data == "вызов функции")
             {
+                if (node.Children[0].Data == "Console.WriteLine")
+                {
+                    if (scopes.FindLibrary("System") is null)
+                    {
+                        errors.Add(new FunctionMissingLibraryError("Console.WriteLine"));
+                        return errors;
+                    }
+                }
+
                 Node parameterersNode = node.Parent.GetChildren("параметры вызова функции")[0];
 
                 List<List<DataType>> parameterDataTypeLists = new List<List<DataType>>();

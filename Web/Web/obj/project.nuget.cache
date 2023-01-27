@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "knNwJeq8sSf70h+y/hj8ihqyc5Z2bZZZ3UwnGBOHzk/UQ7TF9jNdIy0Jgoofh2OiIQPyz34/K+lkeKnvr8sqEg==",
+  "dgSpecHash": "0iBOp7lnTD3KlmU7+BGH5hSLJToEpOXJLKt29Vhy+KP4YgAdbEldhBR03vpSk2hWfP5KNnv3LeYDTWxUduXxpw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hards\\Desktop\\Translator\\Web\\Web\\Web.csproj",
+  "projectFilePath": "C:\\Users\\hards\\Desktop\\CSharpToPython_Translator-main\\CSharpToPython_Translator-main\\Web\\Web\\Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hards\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512"
   ],

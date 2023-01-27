@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hards\\Desktop\\Translator\\Translator\\Translator.csproj": {}
+    "C:\\Users\\hards\\Desktop\\CSharpToPython_Translator-main\\CSharpToPython_Translator-main\\Translator\\Translator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hards\\Desktop\\Translator\\Translator\\Translator.csproj": {
+    "C:\\Users\\hards\\Desktop\\CSharpToPython_Translator-main\\CSharpToPython_Translator-main\\Translator\\Translator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hards\\Desktop\\Translator\\Translator\\Translator.csproj",
+        "projectUniqueName": "C:\\Users\\hards\\Desktop\\CSharpToPython_Translator-main\\CSharpToPython_Translator-main\\Translator\\Translator.csproj",
         "projectName": "Translator",
-        "projectPath": "C:\\Users\\hards\\Desktop\\Translator\\Translator\\Translator.csproj",
+        "projectPath": "C:\\Users\\hards\\Desktop\\CSharpToPython_Translator-main\\CSharpToPython_Translator-main\\Translator\\Translator.csproj",
         "packagesPath": "C:\\Users\\hards\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hards\\Desktop\\Translator\\Translator\\obj\\",
+        "outputPath": "C:\\Users\\hards\\Desktop\\CSharpToPython_Translator-main\\CSharpToPython_Translator-main\\Translator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hards\\AppData\\Roaming\\NuGet\\NuGet.Config",

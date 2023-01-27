@@ -1,21 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Translator.SemanticAnalyzer
+﻿namespace Translator.SemanticAnalyzer
 {
     public class Scope
     {
         private List<Variable> _variables = new List<Variable>();
         private List<Function> _functions = new List<Function>();
+        private List<Variable> _libraries = new List<Variable>();
 
-        public void Add(Variable variable)
+        public void Add(Variable variable, bool isLibrary = false)
         {
-            _variables.Add(variable);
+            if (isLibrary)
+            {
+                _libraries.Add(variable);
+            }
+            else
+            {
+                _variables.Add(variable);
+            }
         }
 
         public void Add(Function function)
         {
             _functions.Add(function);
+        }
+
+        public Variable FindLibrary(string identificator)
+        {
+            foreach (var library in _libraries)
+            {
+                if (library.Identificator == identificator)
+                {
+                    return library;
+                }
+            }
+
+            return null;
         }
 
         public List<Function> FindFunctions(string identificator)

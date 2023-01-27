@@ -49,6 +49,12 @@ namespace Translator.Generator
                     }
                 }
 
+
+                if (i > 1 && Tokens[i - 2].Text == "using")
+                {
+                    continue;
+                }
+
                 if (converted != null)
                 {
                     outputLine += converted.Converted;

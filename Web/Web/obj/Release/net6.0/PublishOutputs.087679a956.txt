@@ -1,0 +1,12 @@
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\Translator.exe
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\Web.exe
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\Translator.deps.json
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\Translator.runtimeconfig.json
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\Web.dll
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\Web.deps.json
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\Web.runtimeconfig.json
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\Web.pdb
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\Translator.dll
+C:\Users\hards\Desktop\CSharpToPython_Translator-main\CSharpToPython_Translator-main\Web\Web\obj\Release\net6.0\PubTmp\Out\Translator.pdb

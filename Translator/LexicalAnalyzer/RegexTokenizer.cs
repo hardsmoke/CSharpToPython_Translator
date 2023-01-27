@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Text.RegularExpressions;
+using Translator.Errors;
+using Translator.Errors.LexicalErrors;
 
 namespace Translator.LexicalAnalyzer
 {
@@ -18,6 +20,9 @@ namespace Translator.LexicalAnalyzer
 
         private List<Token> _tokens = new List<Token>();
         public List<Token> Tokens => _tokens;
+
+        private List<Error> _errors = new List<Error>();
+        public List<Error> Errors => _errors;
 
         public RegexTokenizer(string content, TokenType[] tokenTypes)
         {
@@ -51,14 +56,27 @@ namespace Translator.LexicalAnalyzer
 
         public void Tokenize(string pattern)
         {
+            _errors = new List<Error>();
             Regex regex = new Regex(pattern, RegexOptions.IgnoreCase);
 
-            _currentMatch = regex.Match(_input);
-            _currentToken = GetToken(_currentMatch);
-
-            while (HasMoreElements())
+            if (_input == null)
             {
-                MoveNext();
+                _errors.Add(new DetectedEmptyInputError());
+            }
+            else
+            {
+                _currentMatch = regex.Match(_input);
+                _currentToken = GetToken(_currentMatch);
+
+                while (HasMoreElements())
+                {
+                    if (_currentToken == null)
+                    {
+                        break;
+                    }
+
+                    MoveNext();
+                }
             }
         }
 
@@ -79,7 +97,13 @@ namespace Translator.LexicalAnalyzer
                     }
                 }
             }
-            throw new Exception($"Не удается определить лексему {_input[_currentPosition]} в позиции {_currentPosition}");
+
+            if (_input.Length > 0)
+            {
+                _errors.Add(new LexemNotFoundError(_input[_currentPosition], _currentPosition));
+            }
+
+            return null;
         }
 
         protected Token CreateToken(string content, TokenType tokenType, int startIndex, int endIndex)
